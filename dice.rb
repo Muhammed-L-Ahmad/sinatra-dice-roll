@@ -41,7 +41,7 @@ end
 get("/dice/1/20") do
   @die = rand(1..20)
 	
-	@outcome = "You rolled a #{die}."
+	@outcome = "You rolled a #{die}." 
 	
 end
 
@@ -54,4 +54,18 @@ get("/dice/5/4") do
 	
 	@outcome = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, and a #{fourth_die} for a total of #{sum}."
 	
+end
+
+# Let’s make an Array and populate it using a .times loop to display one hundred rolls of 6-sided dice.
+get("dice/100/6") do
+
+  @rolls = []  # use an empty array to hold it
+
+  100.times do
+    die = rand(1..6)  # this generates the random number
+
+    @rolls.push(die)  # this adds the random nubmer to the array
+  end
+
+  erb(:one_hundred_six)
 end
