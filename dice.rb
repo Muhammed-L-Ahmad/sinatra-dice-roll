@@ -27,7 +27,6 @@ get("/dice/2/6") do
 	
 	outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 	
-	""
 end
 
 get("/dice/2/10") do
